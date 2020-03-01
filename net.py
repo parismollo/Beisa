@@ -13,18 +13,18 @@ def _relu(z):
 
 
 def start_layers(architecture, seed = 99):
-    np.random.seed(seed)
-    number_of_layers = len(architecture)
-    parameters = {}
+    np.random.seed(seed) #Generate random values for the matrices
+    number_of_layers = len(architecture) # we don't consider the input layer
+    parameters = {} # we will store the parameters and assing for each layer
 
     for idx, layer in enumerate(architecture):
 
-        layer_idx = idx + 1
-
+        layer_idx = idx + 1 # we want to start at 1, enumerate start counting at 0
+        # weights matrix depend on the number of neurons, i.e. the layer size
         input_layer_size = layer["dim_entry"]
         output_layer_size = layer["dim_output"]
 
-
+        #generating a matrix
         parameters['w' + str(layer_idx)] = np.random.randn(
             output_layer_size, input_layer_size)  * 0.1
         parameters['b' + str(layer_idx)] = np.random.randn(
@@ -33,6 +33,7 @@ def start_layers(architecture, seed = 99):
     return parameters
 
 def layer_feedforward(previous_activation_value, current_weights, current_bias, activation="relu"):
+    # matrix multiplication using numpy
     current_output = np.dot(current_weights, previous_activation_value) + current_bias
 
     if activation is "relu":
@@ -46,8 +47,8 @@ def layer_feedforward(previous_activation_value, current_weights, current_bias, 
 
 
 def network_feedforward(X, parameters, architecture):
-    memory = {}
-    current_activation_value = X
+    memory = {} # we need to store the previous activation value and current output
+    current_activation_value = X #what the next layer receives as input
 
     for idx, layer in enumerate(architecture):
         layer_idx = idx + 1
@@ -179,9 +180,29 @@ def main():
     data = pd.read_csv('day.csv')
     data_loading.text('Loading data done!')
 
-    st.write(data)
 
-    data_normalization = st.text('Normalizing data...')
+
+
+    st.write(data)
+    st.subheader('Looking for coorelations...')
+    plt.scatter(data['temp'], data['cnt'])
+    plt.ylabel('Rented bikes')
+    plt.xlabel('Temperature')
+    plt.title('Bikes and Temperature')
+    st.pyplot()
+
+    plt.scatter(data['weathersit'], data['cnt'])
+    plt.title('Weather and Bikes')
+    plt.ylabel('Rented bikes')
+    plt.xlabel('Weather')
+    idxs = [1, 2, 3]
+    plt.xticks(idxs)
+    st.pyplot()
+
+
+
+    st.markdown('**Different units so need to normalize**, all variables on the same interval')
+    data_normalization = st.text('Normalizing data...interval defined [0, 1]')
     y = data['cnt'].values
     X = data[['weathersit','temp']].values
     X = X/np.amax(X,axis=0)
