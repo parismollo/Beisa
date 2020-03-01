@@ -8,7 +8,7 @@ I will be using Streamlit to develop an App where I will be sharing what I've le
 
 ```
 pip install -r requirements.txt
-streamlit run https://raw.githubusercontent.com/parismollo/BikeSharing-Predictor/master/net.py
+streamlit run https://raw.githubusercontent.com/parismollo/BikeSharing-net/master/net.py
 ```
 
 Resources:
