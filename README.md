@@ -10,3 +10,8 @@ I will be using Streamlit to develop an App where I will be sharing what I've le
 pip install -r requirements.txt
 streamlit run https://raw.githubusercontent.com/parismollo/LogisticRegression/master/logistic_regression.py
 ```
+
+Resources:
+* Course from Alura: Builing a regression model with numpy
+* ML glossary
+* 3blue1brown
