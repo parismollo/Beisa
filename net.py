@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 from sklearn.model_selection import train_test_split
 import time
+from PIL import Image
 
 def _sigmoid(z):
     return 1/(1+np.exp(-z))
@@ -215,6 +216,12 @@ def main():
     neurons = st.selectbox('How many neurons in the hidden layer would you like?', (10, 30, 50, 100))
     number_of_iterations = st.slider('Choose the number of iterations', 0, 20000, 10)
     learning_rate = st.selectbox('Choose the learning rate', (0.001, 0.005, 0.01))
+
+    show = st.checkbox('Hide image')
+    if not show:
+        st.subheader('Here is how our network will operate')
+        image = Image.open('images/mind_map.jpg')
+        st.image(image, caption='Network architecture', use_column_width=True)
 
     with st.echo():
         architecture = [
