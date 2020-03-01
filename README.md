@@ -12,7 +12,7 @@ streamlit run https://raw.githubusercontent.com/parismollo/BikeSharing-Predictor
 ```
 
 Resources:
-* Course from Alura: Building a regression model with numpy
-* ML glossary
-* 3blue1brown
+* Lectures: Building a regression model with numpy, Alura: https://www.alura.com.br/curso-online-rede-neural-numpy
+* ML glossary: https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html
+* 3blue1brown: https://www.youtube.com/watch?v=aircAruvnKk&t=551s
 * ILOC tutorial: https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
