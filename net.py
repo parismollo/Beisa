@@ -77,11 +77,11 @@ def update(parameters, gradients, architecture, learning_rate):
     return parameters;
 
 def loss_value(predicted_y, Y):
-
+    #cross entropy loss function
     m = predicted_y.shape[1]
 
     loss_value = -1 / m * (np.dot(Y, np.log(predicted_y).T) + np.dot(1 - Y, np.log(1 - predicted_y).T))
-    return np.squeeze(loss_value)
+    return np.squeeze(loss_value) #we don't need a vector, just a scalar
 
 def network_backpropagation(predicted_y, Y, memory, parameters, architecture):
 
