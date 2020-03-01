@@ -10,6 +10,8 @@ I will be using Streamlit to develop an App where I will be sharing what I've le
 pip install -r requirements.txt
 streamlit run https://raw.githubusercontent.com/parismollo/BikeSharing-net/master/net.py
 ```
+![demo - 1](images/gif01.gif)
+![demo - 2](images/gif02.gif)
 
 Resources:
 * Lectures: Building a regression model with numpy, Alura: https://www.alura.com.br/curso-online-rede-neural-numpy
