@@ -12,6 +12,6 @@ streamlit run https://raw.githubusercontent.com/parismollo/LogisticRegression/ma
 ```
 
 Resources:
-* Course from Alura: Builing a regression model with numpy
+* Course from Alura: Building a regression model with numpy
 * ML glossary
 * 3blue1brown
