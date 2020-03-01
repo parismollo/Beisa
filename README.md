@@ -15,3 +15,4 @@ Resources:
 * Course from Alura: Building a regression model with numpy
 * ML glossary
 * 3blue1brown
+* ILOC tutorial: https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
